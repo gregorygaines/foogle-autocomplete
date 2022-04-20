@@ -70,7 +70,7 @@ class Trie {
 
   // Get all words with prefix
   getWords = (prefix) => {
-    // Get root node from prefix
+    // Get root node of prefix
     let prefixRootNode = this.contains(prefix, true);
 
     // The prefix isn't in the trie.

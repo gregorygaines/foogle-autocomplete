@@ -3,9 +3,12 @@ import {useAutocomplete} from "./useAutocomplete";
 import {SearchBar} from "./SearchBar";
 
 const App = () => {
+  // The value of the search bar
   const [searchQuery, setSearchQuery] = useState("");
+  // The hook to retrieve autocomplete results using "searchQuery"
   const autocompleteResults = useAutocomplete(searchQuery);
 
+  // The onChange handler for the search input
   const handleSearchInputChange = (e) => {
     setSearchQuery(e.target.value);
   }
@@ -39,6 +42,7 @@ const App = () => {
           <span className="text-green-500">l</span>
           <span className="text-red-500">e</span>
         </h1>
+        {/* Pass hook value and onChange handler for search bar */}
         <SearchBar searchQuery={searchQuery} handleOnChange={(e) => {
           handleSearchInputChange(e);
         }} autocompleteResults={autocompleteResults} />
